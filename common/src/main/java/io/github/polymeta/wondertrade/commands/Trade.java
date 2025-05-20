@@ -16,14 +16,17 @@ import io.github.polymeta.wondertrade.util.TradeUtil;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
+import dev.ftb.mods.ftblibrary.fabric.api.FabricPermissionsHelper;
 
 public class Trade {
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         var tradeCommand = dispatcher.register(
                 LiteralArgumentBuilder.<CommandSourceStack>literal("wondertrade")
-                        .requires(req -> Cobblemon.INSTANCE.getPermissionValidator().hasPermission(req,
-                                new CobblemonPermission("wondertrade.command.trade.base", PermissionLevel.NONE)))
+                        .requires(context -> {
+                            ServerPlayerEntity player = context.getSource().getPlayer();
+                            return FTBServerCapabilities.INSTANCE.getPermissionProvider().hasPermission(player,"wondertrade.command.trade.base");
+})
                         .then(Commands.argument("slot", PartySlotArgumentType.Companion.partySlot())
                                 .then(Commands.argument("confirmation", StringArgumentType.greedyString()).executes(ExecuteWithConfirm))
                                 .executes(Execute))
