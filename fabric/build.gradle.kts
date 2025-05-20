@@ -25,7 +25,7 @@ dependencies {
     minecraft("com.mojang:minecraft:${property("minecraft_version")}")
     mappings(loom.officialMojangMappings())
     modImplementation("net.fabricmc:fabric-loader:${property("fabric_loader_version")}")
-    modImplementation("dev.ftb.mods:ftblibrary-fabric:2101.1.3")
+    modImplementation("dev.ftb.mods:ftb-library-fabric:2101.1.3")
 
     modRuntimeOnly("net.fabricmc.fabric-api:fabric-api:${property("fabric_api_version")}")
     modImplementation("net.fabricmc:fabric-language-kotlin:${property("fabric_kotlin")}")
