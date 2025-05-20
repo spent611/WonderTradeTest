@@ -12,13 +12,6 @@ loom {
     silentMojangMappingsLicense()
 }
 
-repositories {
-    maven {
-        name = "FTB Maven"
-        url = "https://maven.saps.dev/minecraft"
-    }
-}
-
 dependencies {
     minecraft("com.mojang:minecraft:${property("minecraft_version")}")
     // The following line declares the mojmap mappings, you may use other mappings as well
@@ -31,5 +24,4 @@ dependencies {
     // Remove the next line if you don't want to depend on the API
     modApi("dev.architectury:architectury:${property("architectury_version")}") { isTransitive = false }
     modImplementation("com.cobblemon:mod:${property("cobblemon_version")}") { isTransitive = false }
-    modImplementation "dev.ftb.mods:ftblibrary-fabric:2001.5.5-build.123"
 }
