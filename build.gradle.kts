@@ -20,7 +20,8 @@ allprojects {
         maven("https://maven.impactdev.net/repository/development/")
         maven("https://maven.neoforged.net/releases")
         maven("https://thedarkcolour.github.io/KotlinForForge/")
-        maven("https://maven.ftb.dev")
+        maven("https://maven.ftb.dev/releases/")
+        maven("https://maven.blamejared.com/")
     }
 
     java {

@@ -49,8 +49,6 @@ dependencies {
     // Remove the next line if you don't want to depend on the API
     modImplementation "dev.architectury:architectury-neoforge:${rootProject.architectury_version}"
 
-    modImplementation("com.cobblemon:neoforge:${property("cobblemon_version")}")
-
     forgeRuntimeLibrary("thedarkcolour:kotlinforforge-neoforge:5.3.0") {
         exclude group: "net.neoforged.fancymodloader", module: "loader"
     }
